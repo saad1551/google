@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik+Doodle+Shadow&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 20%, rgba(0, 0, 0, 0.1)),
+                url('./bgPhoto.jpg') center/cover no-repeat border-box;
+    height: 100vh;
+    padding: 5rem 0px;
+}
+
+.search {
+    height: 28vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-size: 5rem;
+    color:  white;
+    font-family: 'Rubik Doodle Shadow';
+    /* margin-bottom: 1rem; */
+}
+
+form {
+    position: relative;
+    width: 70vw;
+}
+
+input {
+    width: 100%;
+    height: 3.3rem;
+    padding: 0px 1rem;
+    border-radius: 3rem;
+    border: 1px solid black;
+    outline: 0px;
+    font-size: 1.1rem;
+    background-color: rgba(255, 255, 255, 0.4) ;
+}
+
+input:focus {
+    background-color: white;
+    border: 0px;
+}
+
+.btn {
+    position: absolute;
+    right: -1%;
+    top: 0;
+    height: 100%;
+    border-radius: 5rem;
+    border: 0px;
+    width: 20%;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.results {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 70vw;
+    max-height: 260px;
+    overflow: auto;
+    margin: auto;
+    margin-top: 2rem;
+    /* margin-bottom: 4rem; */
+} 
+
+form,
+.results {
+    max-width: 704px;
+}
+
+.result {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border: .25px solid black;
+}
+
+.result > label {
+    margin-left: 5px;
+}
+
+.result > a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+    transition: all 0.2s ease-in-out;
+}
+
+.result > a:hover {
+    font-size: 1.1rem;
+    color: white;
+}
+
+
+/* Width, color, and background for the scrollbar track */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Track (the area on which the thumb drags) */
+::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Handle (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(202, 202, 202, 0.9);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the handle on hover */
+}
+
+.add-json {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add {
+    width: 70%; /* Adjust the width as needed */
+    max-width: 300px; /* Set a maximum width */
+    height: 2.5rem; /* Adjust the height as needed */
+    margin-bottom: 1rem; /* Add some space below the input */
+    border: 1px solid black;
+    border-radius: 3rem;
+    padding: 0.5rem;
+    outline: none;
+    font-size: 1rem;
+}
+
+.add:focus {
+    background-color: rgba(255, 255, 255, 0.8); /* Lighter background on focus */
+    border: 1px solid #000; /* Darker border on focus */
+}
+
+.add + .btn {
+    width: 40%; /* Adjust the width as needed */
+    max-width: 150px; /* Set a maximum width */
+    margin-top: 0.5rem; /* Add some space above the button */
+}
+
+/* Adjust the button style if needed */
+.add-json .btn {
+    border-radius: 3rem;
+    border: 0px;
+    transition: all 0.2s ease-in-out;
+}
+
+.add-json .btn:hover {
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}

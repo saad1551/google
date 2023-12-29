@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'searchengine/styles.css' %}" />
+    <title>Google 2.0</title>
+  </head>
+  <body>
+    {% if message %}
+    <script>
+      alert("{{ message }}");
+    </script>
+    {% endif %}
+    <div class="container">
+      <div class="search">
+        <label class="title">Google 2.0</label>
+        <form action="{% url 'index' %}" method="post">
+          {% csrf_token %}
+          <input
+            id="query"
+            name="query"
+            type="text"
+            placeholder="Search Here..."
+          />
+          <button type="submit" class="btn">Search</button>
+        </form>
+      </div>
+
+      <div class="add-json">
+        <form enctype="multipart/form-data" action="" method="post">
+          {% csrf_token %}
+          <!-- <label for="json_file">Select  File:</label> -->
+          <input
+            class="add"
+            id="json_file"
+            name="json_file"
+            type="file"
+            accept=".json"
+            required
+          />
+
+          <button type="submit" class="btn">Add content</button>
+        </form>
+      </div>
+
+      <div class="results">
+        {% for doc in docs %}
+        <div class="result">
+          <!-- <label>1</label> -->
+          <a href="{{ doc.url }}" class="link">{{ doc.title }}</a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>
